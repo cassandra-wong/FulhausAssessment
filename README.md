@@ -15,17 +15,19 @@ In this project, image classification is performed using VGG16 to classify 3 fur
 1. Create and activate virtual environment.
 
 ```sh
-$ python -m venv python3-virtualenv
+$ python3.8 -m venv python3-virtualenv
 $ source python3-virtualenv/bin/activate
 ```
 
-2. Clone the git repository.
+2. Clone the git repository and enter folder.
 
 ```sh
 git clone https://github.com/cassandra-wong/FurnitureClassification.git
 ```
-
-```bash
+```sh
+cd FurnitureClassification
+```
+```sh
 pip install -r requirements.txt 
 ```
 
