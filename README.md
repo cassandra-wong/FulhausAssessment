@@ -2,7 +2,16 @@
 
 ## Overview
 
-In this project, image classification is performed using VGG16 to classify 3 furniture types - bed, chair, and sofa. Each class contains 100 images. A small convolutional neural network (CNN) was created as baseline, and used VGG16 through transfer learning to improve results. See `FulhausAssessment.ipynb` for exploratory data analysis, visualization, and model building. The training app is saved inside `train.py`. 
+In this project, image classification is performed using VGG16 to classify 3 furniture types - bed, chair, and sofa. Each class contains 100 images. A small convolutional neural network (CNN) was created as baseline, and used VGG16 through transfer learning to improve results. The following steps are implemented to achieve this goal:
+
+- Build a classification model using deep learning model
+  - `FulhausAssessment.ipynb` and `train.py`
+- Build an API to access the model using Flask
+  - `app.py`
+- Create a Docker image of your code by following docker best practices
+  - `Dockerfile`
+- Implement CI/CD pipeline on Github Actions
+- Add a clear README file with instructions
 
 ## Requirements
 
