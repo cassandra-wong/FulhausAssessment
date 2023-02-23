@@ -30,7 +30,6 @@ def home():
 def predict():
     # get the image data from the request
     image = request.files['image'].read()
-    image = Image.open(io.BytesIO(image))
 
     # preprocess the image data 
     preprocessed_image = preprocess_image(image)
