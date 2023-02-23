@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this project, image classification is performed using VGG16 to classify 3 furniture types - bed, chair, and sofa. A small convolutional neural network (CNN) was created as baseline, and used VGG16 through transfer learning to improve results.
+In this project, image classification is performed using VGG16 to classify 3 furniture types - bed, chair, and sofa. Each class contains 100 images. A small convolutional neural network (CNN) was created as baseline, and used VGG16 through transfer learning to improve results. See `FulhausAssessment.ipynb` for exploratory data analysis, visualization, and model building. The training app is saved inside `train.py`. 
 
 ## Requirements
 
