@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e2cfaf8066d80276803a9e182df32529df5794d2518fc75678a003248ba780f2
-size 602
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fulhaus Furniture Classification</title>
+</head>
+<body>
+    <h1> Furniture Classifier</h1>
+    <form class="p-3 text-center" action="/" method="post" enctype="multipart/form-data">
+        <input class="form-control" type="file" name="imagefile">
+        <input class="btn btn-primary mt-3" type="submit" value="Classify Image">
+    </form>
+    {% if prediction %}
+        <img src="{{user_image}}">
+        <p class="text-center">The image contains a {{pred}}, with a {{prob}} % accuracy</p>
+    {% endif %}
+</body>
+</html>
