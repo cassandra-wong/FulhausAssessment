@@ -1,7 +1,11 @@
+import io
+import cv2
+from PIL import Image
+from tensorflow.keras.preprocessing.image import img_to_array
 from flask import Flask, jsonify, request, render_template
 from tensorflow.keras.models import load_model
 from tensorflow.keras.applications.imagenet_utils import decode_predictions
-import cv2
+
 
 # load the pre-trained VGG16 model
 model = load_model('vgg16_model.h5')
@@ -12,7 +16,9 @@ app = Flask(__name__)
 # preprocess image
 def preprocess_image(img):
     img = cv2.resize(img, (128, 128))
+    img = img_to_array(img)
     img = img/255
+    return img
 
 # render html file
 @app.route('/', methods = ['GET'])
@@ -23,7 +29,8 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     # get the image data from the request
-    image = request.files['image']
+    image = request.files['image'].read()
+    image = Image.open(io.BytesIO(image))
 
     # preprocess the image data 
     preprocessed_image = preprocess_image(image)

@@ -1,5 +1,8 @@
-pandas
-numpy
-keras
+pandas==1.5.3
+numpy==1.23.5
+keras==2.10.0
 matplotlib
-tensorflow
+tensorflow==2.10.0
+flask==2.2.3
+cv2
+sklearn
