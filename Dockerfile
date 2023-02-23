@@ -1,21 +1,17 @@
-FROM tensorflow/tensorflow:2.6.0-gpu
-RUN apt-get update
-# Create working directory
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+# Use the official Python image as the base image
+FROM python:3.10
 
-COPY requirements.txt .
-# Install the requirements.txt
-RUN pip3 install -r requirements.txt
+# Set the working directory
+WORKDIR /app
 
-RUN apt-get install -y python3.8 \
-    && ln -s /usr/bin/python3.8
+# Copy the requirements file into the container
+COPY . /app
 
-COPY --from=builder . /usr/src/app
-COPY . /usr/src/app
+# Install the dependencies
+RUN pip install -r requirements.txt
 
+# Expose the port
+EXPOSE 5000
 
-ENV HOME=/usr/src/app
-
+# Start the API
 CMD ["python", "app.py"]
-EXPOSE 8080

@@ -1,10 +1,10 @@
-import pandas as pd
-import tensorflow as tf
-import numpy as np
-import keras
+import os
 import cv2
+import numpy as np
+import pandas as pd
+import keras
+import tensorflow as tf
 import matplotlib.pyplot as plt
-
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
@@ -12,8 +12,6 @@ from keras.layers.convolutional import Conv2D, MaxPooling2D
 from keras.utils import np_utils
 from sklearn.model_selection import train_test_split
 from keras.applications.vgg16 import VGG16
-
-import os
 
 # Create a dataframe of image path and its label
 img_dir = '/Users/cassandra/Desktop/FulhausAssessment/FulhausData'
@@ -102,7 +100,7 @@ model.compile(
   optimizer="adam",
   loss='sparse_categorical_crossentropy',
   metrics=['acc'])
-history = model.fit(np.array(X_train), np.array(y_train), epochs=10, validation_data=(np.array(X_val), np.array(y_val)))
+history = model.fit(np.array(X_train), np.array(y_train), epochs=20, validation_data=(np.array(X_val), np.array(y_val)))
 
 print(model.evaluate(np.array(X_test),np.array(y_test)))
 
