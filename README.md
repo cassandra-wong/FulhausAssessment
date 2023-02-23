@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this project, image classification is performed using VGG16 to classify 3 furniture types - bed, chair, and sofa. Each class contains 100 images. A small convolutional neural network (CNN) was created as baseline, and used VGG16 through transfer learning to improve results. The following steps are implemented to achieve this goal:
+In this project, image classification is performed using VGG16 to classify 3 furniture types - bed, chair, and sofa. Each class contains 100 images. VGG16 and transfer learning is selected as the architecture model. The following steps are implemented to achieve this goal:
 
 - Build a classification model using deep learning model
   - `FulhausAssessment.ipynb` and `train.py`
@@ -19,7 +19,7 @@ In this project, image classification is performed using VGG16 to classify 3 fur
 
 VGG-16 is a convolutional neural network (CNN) that is 16 layers deep. It is selected as the backbone of the classifier as it is one of the popular algorithms for image classification and is easy to use it for transfer learning. 
 
-Firstly, the VGG16 model parameters are freezed, and only parameters in the lasy layer are allowed to be adjusted to reduce computation workload. Then, custom layers are added to the base model -- Flatten, Dropout, and Dense. The last layer has an output shape equal to 3, the output will be probabilities of 3 furniture categories, and the softmax function will summarize the category with the highest probability.
+Firstly, the VGG16 model parameters are freezed, and only parameters in the last layer are allowed to be adjusted to reduce computation workload. Then, custom layers are added to the base model -- Flatten, Dropout, and Dense. The last layer has an output shape equal to 3, the output will be probabilities of 3 furniture categories, and the softmax function will summarize the category with the highest probability.
 
 ### Data Preprocessing
 
