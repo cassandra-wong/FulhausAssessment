@@ -7,8 +7,8 @@ In this project, image classification is performed using VGG16 to classify 3 fur
 ## Requirements
 
 - JupyterNotebook or Google Colab
-- Python3
-- Pip
+- Python 3.7-3.10
+- Pip 20.3 or higher
 
 ## Installation of the API / Web Application
 
