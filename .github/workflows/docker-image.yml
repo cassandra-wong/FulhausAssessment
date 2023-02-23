@@ -1,18 +1,3 @@
-name: Docker Image CI
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-jobs:
-
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+version https://git-lfs.github.com/spec/v1
+oid sha256:95fd5a43dc866a313090a286d03efcaa7340a512d6720facffbb82e80ec69ca1
+size 301
