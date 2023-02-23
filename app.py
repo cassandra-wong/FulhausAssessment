@@ -1,6 +1,5 @@
 from flask import Flask, jsonify, request
-from tensorflow import keras
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 import cv2
 
 # load the pre-trained VGG16 model
