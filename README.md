@@ -1,6 +1,4 @@
-# Fulhaus Assessment
-
-Technical Assessment for the role of Junior Machine Learning Engineer at Fulhaüs.
+# Furniture Classification Take Home Assessment
 
 ## Overview
 
