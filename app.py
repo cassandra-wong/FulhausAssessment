@@ -2,6 +2,7 @@ import io
 import cv2
 from flask import Flask, jsonify, request, render_template
 from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.applications.imagenet_utils import decode_predictions
 
 
@@ -15,6 +16,7 @@ app = Flask(__name__)
 def preprocess_image(img):
     img = cv2.resize(img, (128, 128))
     img = img/255
+    image = img_to_array(image)
     return img
 
 # render html file
