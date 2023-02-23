@@ -29,7 +29,7 @@ Firstly, the VGG16 model parameters are freezed, and only parameters in the last
 
 2. Image sizing
 
-    Before an image is inputted for deep learningraining, it must be converted to an array with a specific size (in this case, 128x128) for the model and scaled to have a value between 0 and 1.
+    Before an image is inputted for deep learning, it must be converted to an array with a specific size (in this case, 128x128) for the model and scaled to have a value between 0 and 1.
 
 3. Image Augmentation
 
