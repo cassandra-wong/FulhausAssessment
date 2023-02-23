@@ -22,7 +22,7 @@ $ source python3-virtualenv/bin/activate
 2. Clone the git repository.
 
 ```sh
-https://github.com/cassandra-wong/FulhausAssessment.git
+git clone https://github.com/cassandra-wong/FulhausAssessment.git
 ```
 
 ```bash
