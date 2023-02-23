@@ -15,7 +15,7 @@ In this project, image classification is performed using VGG16 to classify 3 fur
 1. Create and activate virtual environment.
 
 ```sh
-$ python3.8 -m venv python3-virtualenv
+$ python3 -m venv python3-virtualenv
 $ source python3-virtualenv/bin/activate
 ```
 
