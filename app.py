@@ -1,7 +1,5 @@
 import io
 import cv2
-from PIL import Image
-from tensorflow.keras.preprocessing.image import img_to_array
 from flask import Flask, jsonify, request, render_template
 from tensorflow.keras.models import load_model
 from tensorflow.keras.applications.imagenet_utils import decode_predictions
@@ -16,7 +14,6 @@ app = Flask(__name__)
 # preprocess image
 def preprocess_image(img):
     img = cv2.resize(img, (128, 128))
-    img = img_to_array(img)
     img = img/255
     return img
 
@@ -29,7 +26,8 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     # get the image data from the request
-    image = request.files['image'].read()
+    image = request.files['image']
+    image = cv2.imdecode(numpy.frombuffer(file.read(), numpy.uint8), cv2.IMREAD_UNCHANGED)
 
     # preprocess the image data 
     preprocessed_image = preprocess_image(image)
