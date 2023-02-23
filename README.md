@@ -13,6 +13,32 @@ In this project, image classification is performed using VGG16 to classify 3 fur
 - Implement CI/CD pipeline on Github Actions
 - Add a clear README file with instructions
 
+## Model
+
+### Architecture
+
+VGG-16 is a convolutional neural network (CNN) that is 16 layers deep. It is selected as the backbone of the classifier as it is one of the popular algorithms for image classification and is easy to use it for transfer learning. 
+
+Firstly, the VGG16 model parameters are freezed, and only parameters in the lasy layer are allowed to be adjusted to reduce computation workload. Then, custom layers are added to the base model -- Flatten, Dropout, and Dense. The last layer has an output shape equal to 3, the output will be probabilities of 3 furniture categories, and the softmax function will summarize the category with the highest probability.
+
+### Data Preprocessing
+
+1. Encode label
+
+    The labels ['bed','chair','sofa'] are encoded from a categorical to a numerical value for deep learning purposes.
+
+2. Image sizing
+
+    Before an image is inputted for deep learningraining, it must be converted to an array with a specific size (in this case, 128x128) for the model and scaled to have a value between 0 and 1.
+
+3. Image Augmentation
+
+    Due to the small set of samples, image augmentation is implemented to apply random perturbations that preserve the label information. Examples of transformations include horizontal blurring, rotations, and zoom.
+
+### Training
+
+We split the dataset into three folds: training (80%), test (16%) and validation (16%), and use the `sparse_categorical_crossentropy` as our target along with the `accuracy` as the evaluation metric. The train dataset obtained an accuracy of 99.11%, with a loss of 0.0152, and the test dataset obtained an accuracy of 85.71%, with a loss of 0.5983. 
+
 ## Requirements
 
 - JupyterNotebook or Google Colab
@@ -69,3 +95,9 @@ docker build -t [NAME] .
 ```sh
 docker run -p 5000:5000 [NAME]
 ```
+
+## Conclusion
+
+This project provided me with an opportunity to build a deep learning model to classify furniture types using tensorflow, build an API to access the model with Flask, create a Docker image, as well as implemented CI/CD pipeline on Github Actions. 
+
+Given more time, I would test out different architectures (i.e., ResNet, MobileNetV2, etc.) and tune the hyperparameters, as well as create a more aesthetically looking UI for the web application. 
